@@ -3,9 +3,9 @@ import Interface
 from Interface import *
 
 #------------------
-def Teste():
-    x = 5 
-    return x
+
+def Variaveis(torre1, torre2, torre3, jogadas):
+    return torre1, torre2, torre3, jogadas
 
 #-------------------Resolução Recursiva
 def resolucaoRecursiva(totalDiscos, fromPole, toPole, withPole, torre1, torre2, torre3, jogadas):
@@ -24,6 +24,7 @@ def VoltarJogadas(jogadas, torre1, torre2, torre3):
     torreEscolha = int(jogadas[ultima][0])
     torreSaida = int(jogadas[ultima][1]) 
     trocaDeTorre(torreSaida, torreEscolha, torre1, torre2, torre3, jogadas)
+    jogadas.pop()
 
 
 #-------------------Verifica se ganhou o jogo
@@ -147,6 +148,7 @@ def retirarTorre(torre):
     #retorna o valor do topo
     return disco
 
+
 #Inicialização das torres
 def inicializaçãoTorres():
     torre0 = []
@@ -156,12 +158,11 @@ def inicializaçãoTorres():
     jogadas = []
     return(torre0,torre1,torre2,torre3,jogadas)
 
-
 #------------------Função Principal
 def main():
+    
     #Pergunta a quantidade de discos
-    totalDiscos = int(input("Digite a quantidade de discos: "))
-
+    '''
     #Inicialização das torres
     torre0 = []
     torre1 = []
@@ -213,12 +214,7 @@ def main():
         print(torre3)
         print(jogadas)
         
-        VoltarJogadas(jogadas,torre1,torre2,torre3)
-
-        print(torre1)
-        print(torre2)
-        print(torre3)
-        print(jogadas)
-     
+        #VoltarJogadas(jogadas,torre1,torre2,torre3)
+        '''
 
     print("Parabéns você venceu")
