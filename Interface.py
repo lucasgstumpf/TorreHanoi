@@ -1,15 +1,13 @@
 """
--Colocar Lista de jogadas aparecendo
 -Enfeites
--Botao Voltar jogada
 
 """
 
 import TorreHanoi
 from TorreHanoi import *
 import tkinter as tk
-from tkinter import messagebox
 from tkinter import *
+from tkinter import messagebox
 from functools import partial
 
 app = tk.Tk()
@@ -32,10 +30,19 @@ def iniciarJogo():
     while i <= totalDiscos:
         TorreHanoi.acrescentarTorre(torre1,i)
         TorreHanoi.acrescentarTorre(torre0,i)
+        UIJogadas(jogadas)
         i += 1
     print(torre1)
     print(torre2)
     print(torre3)
+
+#-------------------------Imprimir Jogadas------------------------
+
+def UIJogadas(jogadas):
+    Label(app,text="Lista de Jogadas",background = "#ADEAEA",foreground ="#000").place(x=440,y=400,width="150",height="30")
+    vListaJogadas = Label(app,background = "#4169e1",foreground ="#000")
+    vListaJogadas["text"] = str(jogadas)
+    vListaJogadas.place(x=460,y=420,width="200",height="50")
 
 #-------------------------BASES-------------------------
 def UIInicializarBases():
@@ -103,10 +110,7 @@ def moverDiscos(torre1,torre2, torre3, jogadas):
     print(torre1)
     print(torre2)
     print(torre3)
-
-#-------------------------Inicia / Reinicia ----------------------------------------------------------------
-
-
+    UIJogadas(jogadas)
 
 #--------------------------Erros
 def torresIguais():

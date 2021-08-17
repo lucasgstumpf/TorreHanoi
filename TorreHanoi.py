@@ -25,6 +25,7 @@ def VoltarJogadas(jogadas, torre1, torre2, torre3):
     torreSaida = int(jogadas[ultima][1]) 
     trocaDeTorre(torreSaida, torreEscolha, torre1, torre2, torre3, jogadas)
     jogadas.pop()
+    Interface.UIJogadas(jogadas)
 
 
 #-------------------Verifica se ganhou o jogo
