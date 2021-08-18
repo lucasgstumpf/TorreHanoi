@@ -139,62 +139,8 @@ def retirarTorre(torre):
 
 #------------------Função Principal
 def main():
-    
+    print("Programa iniciado! Divirta-se")
     #Pergunta a quantidade de discos
-    '''
-    #Inicialização das torres
-    torre0 = []
-    torre1 = []
-    torre2 = []
-    torre3 = []
-    jogadas = []
-    i = 1
-    Interface.UIInicializarDiscos(totalDiscos)
-
-
-    #Acrescenta todos os discos na torre 1
-    while i <= totalDiscos:
-        acrescentarTorre(torre1,i)
-        acrescentarTorre(torre0,i)
-        i += 1
-
-    totalDiscos = len(torre1)
-
-    print("total discos: ", totalDiscos)
-    print(torre1)
-    print(torre2)
-    print(torre3)
-    
-    saiu = False
-    while not saiu:
-        aux = 0
-        torreEscolha = torreSaida = 0
-        #Verifica de qual torre vai sair o disco e para qual vai. Já previne erros de escolher
-        #uma torre que não existe e escolher duas torres iguais
-        while aux == 0 and not (torreSaida < 4 and torreSaida > 0 and torreEscolha < 4 and torreEscolha > 0):
-            torreSaida = int(input("De qual torre deseja retirar o disco?(1,2,3) "))
-            torreEscolha = int(input("Para qual torre irá o disco?(1,2,3,) "))
-
-
-            if torreSaida != torreEscolha:
-                aux == 1
-
-            if not (torreSaida < 4 and torreSaida > 0 and torreEscolha < 4 and torreEscolha > 0):
-                print("\nEscolha de torre inadequada\n")
-
-        #Realiza a troca do disco nas torres]
-        if comparaDisco(torreSaida, torreEscolha, torre1, torre2, torre3):
-            trocaDeTorre(torreSaida, torreEscolha, torre1, torre2, torre3,jogadas)
-            ListaJogadas(jogadas, torreSaida, torreEscolha)
-            saiu = WinTeste(torre0, torre2, torre3)
-
-        print(torre1)
-        print(torre2)
-        print(torre3)
-        print(jogadas)
-        
-        #VoltarJogadas(jogadas,torre1,torre2,torre3)
-        '''
 
 
     
