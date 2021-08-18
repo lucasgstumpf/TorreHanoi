@@ -2,18 +2,6 @@
 import Interface
 from Interface import *
 
-#------------------
-
-def Variaveis(torre1, torre2, torre3, jogadas):
-    return torre1, torre2, torre3, jogadas
-
-#-------------------Resolução Recursiva
-def resolucaoRecursiva(totalDiscos, fromPole, toPole, withPole, torre1, torre2, torre3, jogadas):
-    if totalDiscos >= 1:
-        resolucaoRecursiva(totalDiscos-1,fromPole,withPole,toPole, torre1, torre2, torre3, jogadas)
-        trocaDeTorre(fromPole, toPole, torre1, torre2, torre3, jogadas)
-        resolucaoRecursiva(totalDiscos-1,withPole,toPole,fromPole, torre1, torre2, torre3, jogadas)
-
 #------------------- Lista de jogadas
 def ListaJogadas(jogadas,torreSaida,torreEscolha ):
     jogadas.append([torreSaida, torreEscolha])
@@ -26,7 +14,6 @@ def VoltarJogadas(jogadas, torre1, torre2, torre3):
     trocaDeTorre(torreSaida, torreEscolha, torre1, torre2, torre3, jogadas)
     jogadas.pop()
     Interface.UIJogadas(jogadas)
-
 
 #-------------------Verifica se ganhou o jogo
 def WinTeste(torre0,torre2,torre3):
@@ -48,7 +35,7 @@ def comparaDisco(torreSaida, torreEscolha, torre1, torre2, torre3):
             elif torre1[discoSaida-1] > torre2[discoEscolha-1]:
                 certo = True
         elif torreEscolha == 3:
-            discoSaida = len(torre1) - 1
+            discoSaida = len(torre1)
             discoEscolha = len(torre3)
             if discoEscolha == 0:
                 certo = True
@@ -59,7 +46,7 @@ def comparaDisco(torreSaida, torreEscolha, torre1, torre2, torre3):
     
     elif torreSaida == 2:
         if torreEscolha == 1:
-            discoSaida = len(torre2) - 1
+            discoSaida = len(torre2) 
             discoEscolha = len(torre1)
             if discoEscolha == 0:
                 certo = True
@@ -68,7 +55,7 @@ def comparaDisco(torreSaida, torreEscolha, torre1, torre2, torre3):
                 certo = True
 
         elif torreEscolha == 3:
-            discoSaida = len(torre2) - 1
+            discoSaida = len(torre2) 
             discoEscolha = len(torre3)
             if discoEscolha == 0:
                 certo = True
@@ -78,7 +65,7 @@ def comparaDisco(torreSaida, torreEscolha, torre1, torre2, torre3):
  
     elif torreSaida == 3:
         if torreEscolha == 1:
-            discoSaida = len(torre3) - 1
+            discoSaida = len(torre3)
             discoEscolha = len(torre1)
             if discoEscolha == 0:
                 certo = True
@@ -87,7 +74,7 @@ def comparaDisco(torreSaida, torreEscolha, torre1, torre2, torre3):
                 certo = True
 
         elif torreEscolha == 2:
-            discoSaida = len(torre3) - 1
+            discoSaida = len(torre3)
             discoEscolha = len(torre2)
             if discoEscolha == 0:
                 certo = True
@@ -150,15 +137,6 @@ def retirarTorre(torre):
     return disco
 
 
-#Inicialização das torres
-def inicializaçãoTorres():
-    torre0 = []
-    torre1 = []
-    torre2 = []
-    torre3 = []
-    jogadas = []
-    return(torre0,torre1,torre2,torre3,jogadas)
-
 #------------------Função Principal
 def main():
     
@@ -218,4 +196,5 @@ def main():
         #VoltarJogadas(jogadas,torre1,torre2,torre3)
         '''
 
-    print("Parabéns você venceu")
+
+    
